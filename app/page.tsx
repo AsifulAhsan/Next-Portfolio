@@ -1,103 +1,125 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const projects = [
+    {
+      id: 1,
+      title: "Weather App",
+      description: "A simple weather app built with Flutter & OpenWeatherMap API",
+      image: "/Weather.png",
+      githubUrl: "https://github.com/AsifulAhsan/weather_v0",
+    },
+    {
+      id: 2,
+      title: "Notes App",
+      description: "A simple notes app built with Flutter & SQFlite database",
+      image: "/Notes.jpg",
+      githubUrl: "https://github.com/AsifulAhsan/notes",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="bg-gray-100 text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section id="home" className="bg-gradient-to-b from-emerald-800 to-emerald-950 text-white py-20">
+        <div className="max-w-4xl mx-auto px-4"> {/* Changed px-8 to px-4 */}
+          <div className="flex flex-col items-start space-y-8 animate-fade-in">
+            <div className="relative w-48 h-48">
+              <Image
+                src="/me.jpeg"
+                alt="Asiful Ahsan Wasif"
+                fill
+                className="rounded-full border-4 border-white shadow-lg object-cover"
+              />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold">
+              Hi, I’m Asiful Ahsan Wasif
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-prose">
+              Front-End Developer | Crafting with Next.js & Tailwind CSS
+            </p>
+            {/* Optional: Add a tagline or social icons to fill space */}
+            <p className="text-sm text-gray-300">Follow me on Twitter & LinkedIn</p>
+            <Link
+              href="#contact"
+              className="px-8 py-4 bg-emerald-700 text-white rounded-full font-semibold text-lg hover:bg-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="max-w-4xl mx-auto px-8 py-20">
+        <div className="border-t border-gray-200">
+          <h2 className="text-3xl font-bold text-emerald-900 mb-6 pt-6">About Me</h2>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">
+            I’m a front-end developer passionate about building clean, modern web apps. I’m currently mastering
+            Next.js, TypeScript, and Tailwind CSS to create projects like this portfolio. When I’m not coding,
+            I enjoy exploring new technologies and learning about web development.
+          </p>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="max-w-4xl mx-auto px-8 py-20 bg-gray-50">
+        <div className="border-t border-gray-200">
+          <h2 className="text-3xl font-bold text-emerald-900 mb-8 pt-6">My Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <a
+                key={project.id}
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 block"
+              >
+                <div className="w-full flex justify-center p-6">
+                  <div className="relative w-48 h-48 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={250}
+                      className="max-w-full max-h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-emerald-900">{project.title}</h3>
+                  <p className="text-gray-600 mt-2">{project.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="max-w-4xl mx-auto px-8 py-20 bg-gray-100">
+        <div className="border-t border-gray-200">
+          <h2 className="text-3xl font-bold text-emerald-900 mb-6 pt-6">Contact Me</h2>
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl">
+            Reach out to me for collaborations or just to say hi!
+          </p>
+          <div className="flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+            <a
+              href="https://github.com/AsifulAhsan"
+              className="px-6 py-3 bg-emerald-700 text-white rounded-full font-semibold hover:bg-emerald-900 transition-all duration-300 shadow-md hover:shadow-xl"
+            >
+              Github
+            </a>
+            <a
+              href="mailto:asifulahsan@outlook.com"
+              className="px-6 py-3 bg-emerald-700 text-white rounded-full font-semibold hover:bg-emerald-900 transition-all duration-300 shadow-md hover:shadow-xl"
+            >
+              Email
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
