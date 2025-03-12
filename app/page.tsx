@@ -37,7 +37,7 @@ export default function Home() {
               Hi, I’m Asiful Ahsan Wasif
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-prose">
-              Front-End Developer | Crafting with Next.js & Tailwind CSS
+              Front-End Developer | Crafting with Next.js & Flutter
             </p>
             {/* Optional: Add a tagline or social icons to fill space */}
             <p className="text-sm text-gray-300">Follow me on Twitter & LinkedIn</p>
