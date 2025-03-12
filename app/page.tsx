@@ -40,7 +40,7 @@ export default function Home() {
               Front-End Developer | Crafting with Next.js & Flutter
             </p>
             {/* Optional: Add a tagline or social icons to fill space */}
-            <p className="text-sm text-gray-300">Follow me on Twitter & LinkedIn</p>
+            <p className="text-sm text-gray-300">Follow me on LinkedIn</p>
             <Link
               href="#contact"
               className="px-8 py-4 bg-emerald-700 text-white rounded-full font-semibold text-lg hover:bg-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -116,6 +116,12 @@ export default function Home() {
               className="px-6 py-3 bg-emerald-700 text-white rounded-full font-semibold hover:bg-emerald-900 transition-all duration-300 shadow-md hover:shadow-xl"
             >
               Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/asiful-ahsan-2538b4238/"
+              className="px-6 py-3 bg-emerald-700 text-white rounded-full font-semibold hover:bg-emerald-900 transition-all duration-300 shadow-md hover:shadow-xl"
+            >
+              LinkedIn
             </a>
           </div>
         </div>
